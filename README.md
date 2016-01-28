@@ -55,5 +55,7 @@ Se le ha pedido revisar lo siguiente:
 
 __Entregables.__
 
-1. Para el martes, en clase. - Diagrama de clases de la solución planteada.
+1. Para el martes:
+	* Analizar: qué patrón es aplicable en cada caso?
+	* Diagrama de clases de la solución planteada.
 2. Para el jueves, antes del laboratorio: Solución completa.
