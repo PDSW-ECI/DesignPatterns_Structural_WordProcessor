@@ -10,4 +10,22 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
+    
+
+    <repositories>
+        <repository>
+            <id>ECI internal repository</id>
+            <url>http://profesores.is.escuelaing.edu.co/hcadavid/mvnmirror</url>
+        </repository>
+    </repositories>
+    
+    <dependencies>
+        <dependency>
+            <groupId>edu.eci.pdsw</groupId>
+            <artifactId>language_components</artifactId>
+            <version>1.0</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+        
 </project>

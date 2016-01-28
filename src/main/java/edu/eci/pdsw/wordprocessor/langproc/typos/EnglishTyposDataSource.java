@@ -5,9 +5,6 @@
  */
 package edu.eci.pdsw.wordprocessor.langproc.typos;
 
-import java.util.LinkedHashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.nlang.tools.CloudBasedChecker.dataprocessor.DefaultTypoDataProcessor;
 import org.nlang.tools.CloudBasedChecker.datasource.CommunityLinguisticDataSource;
 import org.nlang.tools.CloudBasedChecker.fixer.NoTypoFoundException;
@@ -19,18 +16,6 @@ import org.nlang.tools.CloudBasedChecker.fixer.TypoFixer;
  */
 public class EnglishTyposDataSource {
 
-	final static LinkedHashMap<String,String> equivalencesMap;
-        
-        static{		
-		equivalencesMap=new LinkedHashMap<>();		
-		
-		equivalencesMap.put("helo", "hello");
-		equivalencesMap.put("ello", "hello");
-		equivalencesMap.put("abd", "and");
-		equivalencesMap.put("abcess", "abscess");
-                
-				
-	}
     
 	/**
 	 * Obj: Verificar que la palabra ingresada esté sujeta a correcciones, por ejemplo
