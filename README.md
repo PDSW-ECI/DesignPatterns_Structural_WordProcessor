@@ -4,6 +4,8 @@
 
 __Procesador de palabas con artefactos linguísticos - continuación.__
 
+Nota: para compilar y ejecutar use los comandos de Maven desde la terminal, no desde el ambiente de desarrollo.
+
 Recientemente se hizo un cambio a la aplicación base sobre la cual usted hizo el último ejercicio. En particular, ahora la aplicación funciona por defecto en Inglés, y el módulo de corrección de errores tipográficos en inglés correspondiente (clase EnglishTyposDataSource) fue modificado, de manera que en lugar de tener un conjunto estático de tuplas [error,equivalencia], ahora recurre a una librería provista por un tercero (revise el archivo pom.xml) para identificar y corregir un mayor número de posibles errores tipográficos.
 
 El siguiente, es el modelo de las nuevas clases que ahora usa la clase EnglishTypoDataSource:
