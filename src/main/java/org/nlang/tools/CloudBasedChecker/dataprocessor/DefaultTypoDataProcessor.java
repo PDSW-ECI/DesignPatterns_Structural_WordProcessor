@@ -18,6 +18,8 @@ package org.nlang.tools.CloudBasedChecker.dataprocessor;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.nlang.tools.CloudBasedChecker.fixer.TypoTouple;
 import org.nlang.tools.CloudBasedChecker.datasource.LinguisticDataSource;
 
@@ -48,12 +50,22 @@ public class DefaultTypoDataProcessor implements TypoDataProcessor{
     @Override
     public String getEquivalentWord(String typo) {
         Set<TypoTouple> tts=ds.getData();
-        for (TypoTouple tt:tts){
+        int count=0;
+        long ti=System.currentTimeMillis();
+        for (TypoTouple tt:tts){            
+            count++;
+            try {
+                if (count%10==0) Thread.sleep(1);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(DefaultTypoDataProcessor.class.getName()).log(Level.SEVERE, null, ex);
+            }
             if (tt.getTypo().compareToIgnoreCase(typo)==0){
                 return tt.getEquivalent();
             }            
         }        
+        LOG.log(Level.INFO, "{0} words compared in {1}ms", new Object[]{count, System.currentTimeMillis()-ti});
         return null;
     }
+    private static final Logger LOG = Logger.getLogger(DefaultTypoDataProcessor.class.getName());
     
 }

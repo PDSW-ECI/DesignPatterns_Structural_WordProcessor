@@ -53,6 +53,10 @@ public class CommunityLinguisticDataSource implements LinguisticDataSource {
         data.add(new TypoTouple("yeras", "years"));
         data.add(new TypoTouple("yersa", "years"));
         data.add(new TypoTouple("yotube", "youtube"));
+        
+        for (int i=0;i<4000;i++){
+            data.add(new TypoTouple("x1"+i, "xxx"+i));
+        }
 
     }
 
