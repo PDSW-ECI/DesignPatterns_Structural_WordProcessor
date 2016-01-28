@@ -50,7 +50,7 @@ Se le ha pedido revisar lo siguiente:
 
 	![alt text](img/NewModule.png)
 
-2. Se ha encontrado que cuando la fuente de datos aumenta, el tiempo de respuesta del método getEquivalentWord() crece linealmente, lo cual relentiza el tiempo de respuesta del editor de texto (verifíquelo usted mismo, cuando haya resuelto el punto 1.). Esto significa que dicho método tiene una complejidad O(N), lo cual lo hace inviable en la medida que la base de datos de errores crezca. Por tal razón, se le ha pedido hacer lo que sea necesario para seguir usando la clase DefaultTypoDataProcesor, pero que cuando a la misma se le pida una palabra equivalente a otra, lo haga con una complejidad del orden O(Log N). 
+2. Se ha encontrado que cuando el tamaño de los datos provisto por la fuente de datos aumenta, el tiempo de respuesta del método getEquivalentWord() crece linealmente, lo cual relentiza el tiempo de respuesta del editor de texto (verifíquelo usted mismo, cuando haya resuelto el punto 1.). Esto significa que dicho método tiene una complejidad O(N), lo cual lo hace inviable en la medida que la base de datos de errores crezca. Por tal razón, se le ha pedido hacer lo que sea necesario para seguir usando la clase DefaultTypoDataProcesor, pero que cuando a la misma se le pida una palabra equivalente a otra, lo haga con una complejidad del orden O(Log N). 
 
 
 __Entregables.__
