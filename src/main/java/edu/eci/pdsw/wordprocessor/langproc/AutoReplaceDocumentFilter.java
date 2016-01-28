@@ -16,6 +16,7 @@
  */
 package edu.eci.pdsw.wordprocessor.langproc;
 
+import edu.eci.pdsw.wordprocessor.langproc.typos.EnglishTyposDataSource;
 import edu.eci.pdsw.wordprocessor.langproc.typos.SpanishTyposDataSource;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
@@ -29,11 +30,11 @@ import javax.swing.text.DocumentFilter;
 public class AutoReplaceDocumentFilter extends DocumentFilter {
 
     private Document document;
-    private SpanishTyposDataSource tds;
+    private EnglishTyposDataSource tds;
     
     private static final int TEXT_LENGTH_AREA = 20;
 
-    public AutoReplaceDocumentFilter(Document document, SpanishTyposDataSource se) {
+    public AutoReplaceDocumentFilter(Document document, EnglishTyposDataSource se) {
         this.document = document;
         this.tds = se;
     }

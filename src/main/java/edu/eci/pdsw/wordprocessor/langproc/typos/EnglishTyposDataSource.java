@@ -6,6 +6,12 @@
 package edu.eci.pdsw.wordprocessor.langproc.typos;
 
 import java.util.LinkedHashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.nlang.tools.CloudBasedChecker.dataprocessor.DefaultTypoDataProcessor;
+import org.nlang.tools.CloudBasedChecker.datasource.CommunityLinguisticDataSource;
+import org.nlang.tools.CloudBasedChecker.fixer.NoTypoFoundException;
+import org.nlang.tools.CloudBasedChecker.fixer.TypoFixer;
 
 /**
  *
@@ -30,17 +36,18 @@ public class EnglishTyposDataSource {
 	 * Obj: Verificar que la palabra ingresada esté sujeta a correcciones, por ejemplo
 	 * por un error típico de digitación identificado.	
 	 * @param word
-	 * @return
+	 * @return la palabra correcta equivalente. Null si no hay ocurrencias.
 	 */
 	public String check(String word){
-		String res=equivalencesMap.get(word);
-		if (res==null){
-			return null;
-		}
-		else{
-			return res;
-		}
-		
+            
+            TypoFixer tf=new TypoFixer(new DefaultTypoDataProcessor(new CommunityLinguisticDataSource()));
+            
+            try {
+                String res=tf.checkAndFixTypo(word);
+                return res;
+            } catch (NoTypoFoundException ex) {
+                return null;
+            }
 	}
 	
 	

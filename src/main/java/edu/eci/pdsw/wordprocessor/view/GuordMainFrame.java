@@ -6,7 +6,9 @@
 package edu.eci.pdsw.wordprocessor.view;
 
 import edu.eci.pdsw.wordprocessor.langproc.AutoReplaceDocumentFilter;
+import edu.eci.pdsw.wordprocessor.langproc.style.EnglishStyleAutoCorrector;
 import edu.eci.pdsw.wordprocessor.langproc.style.SpanishStyleAutoCorrector;
+import edu.eci.pdsw.wordprocessor.langproc.typos.EnglishTyposDataSource;
 import edu.eci.pdsw.wordprocessor.langproc.typos.SpanishTyposDataSource;
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,9 +30,8 @@ import javax.swing.text.DocumentFilter;
  * @author hcadavid
  */
 public class GuordMainFrame extends javax.swing.JFrame {
-
-    final SpanishTyposDataSource se = new SpanishTyposDataSource();
-    final SpanishStyleAutoCorrector autoc=new SpanishStyleAutoCorrector();
+   
+    final EnglishStyleAutoCorrector autoc=new EnglishStyleAutoCorrector();
     private static final String defaultPath="/tmp";
     
     /**
@@ -40,7 +41,7 @@ public class GuordMainFrame extends javax.swing.JFrame {
         initComponents();
 
         final Document document = textArea.getDocument();
-        final SpanishTyposDataSource se = new SpanishTyposDataSource();
+        final EnglishTyposDataSource se = new EnglishTyposDataSource();
 
         
         
